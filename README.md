@@ -1,2 +1,19 @@
 # DeskApp
 The best free alternative Trello on your hosting.
+
+## Description
+TODO
+## Usage
+Follow the following steps and you're good to go! Important: Typescript and npm has to be installed on your machine!
+1: Clone repo
+```
+git clone https://github.com/TODO
+```
+2: Install packages
+```
+npm install
+```
+3: Start server (includes auto refreshing)
+```
+npm start
+```
