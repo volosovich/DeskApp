@@ -7,7 +7,7 @@ TODO
 Follow the following steps and you're good to go! Important: Typescript and npm has to be installed on your machine!
 1: Clone repo
 ```
-git clone https://github.com/TODO
+git clone https://github.com/volosovich/DeskApp.git
 ```
 2: Install packages
 ```
