@@ -1,0 +1,62 @@
+.footer {
+    color: #887;
+    background-color: #000;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.btn {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.btn-circle {
+    border-radius: 20px;
+}
+
+.flex-block {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 80px;
+}
+
+.block {
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 60px 10px 10px 10px;
+    height: 100%;
+    width: 270px;
+}
+
+.block .block-title {
+    display: block;
+    height: 35px;
+}
+
+.block .block-title h4 {
+    line-height: 35px;
+    padding-left: 15px;
+}
+
+.block .card {
+    //border: 1px solid red;
+    width: 250px;
+    //height: 75px;
+    background-color: white;
+    margin: 10px;
+    padding: 0px 10px 5px 10px;
+    //margin-top: 20px;
+    box-shadow: 1px 1px 3px #000;
+    border-radius: 5px;
+}
+
+.flex-block .card-text {
+    padding-top: 5px;
+}
+
+.flex-block .new {
+    opacity: .5;
+}
