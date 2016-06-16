@@ -1,0 +1,17 @@
+<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Desks<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li *ngFor="let item of Desks">
+                <a href="#">{{item.deskName}}</a>
+            </li>
+            <li class="divider"></li>
+            <li data-toggle="modal" data-target="#myModal7"><a href="#">Create a new Desk...</a></li>
+        </ul>
+    </li>
+    <li><a [routerLink]="['About']">About</a></li>
+    <li><a [routerLink]="['Features']">Features</a></li>
+    <li>
+        <button type="button" class="btn btn-success navbar-btn btn-circle">Sign in</button>
+    </li>
+</ul>

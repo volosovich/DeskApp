@@ -1,13 +1,14 @@
 <div class="flex-block" *ngIf="Data" >
-    <div class="block" *ngFor="#list of Data[0]['deskData']">
+    <div class="block" *ngFor="let list of Data[0]['deskData']">
         <div class="block-title">
             <h4>{{list.nameList}}</h4>
         </div>
-        <div *ngFor="#item of list.listCard">
+        <div *ngFor="let item of list.listCard">
             <div class="card">
                 <div class="card-block">
                     <p class="card-text">{{item.textCard}}</p>
                 </div>
             </div>
         </div>
+    </div>
 </div>

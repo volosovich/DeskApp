@@ -1,0 +1,22 @@
+<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [ngFormModel]="form">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Create new Desk</h4>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control" type="text" placeholder="Name of Desk..." maxlength="50" ngControl="nameDesk" required>
+                    <div class="alert alert-danger" role="alert" *ngIf="form.controls.nameDesk.value.length <= 3">Need min 4 chapters</div>
+                    <div class="alert alert-danger" role="alert" *ngIf="form.controls.nameDesk.value.length == 0">Name is required</div>
+                    <div class="alert alert-danger" role="alert" *ngIf="form.controls.nameDesk.errors.foundSameNameOfDesk">You have this desk...</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>

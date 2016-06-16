@@ -1,4 +1,9 @@
+//tmp files, modules and components
+*.zip
+*.log
 app/**/*.js
 app/**/*.map
 node_modules
 bower_components
+// My tmp dev files
+__*
