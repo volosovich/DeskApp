@@ -4,8 +4,8 @@ import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class DemoService {
-
-  constructor(private http:Http) { }
+  
+  constructor(private http:Http) {}
 
   // Uses http.get() to load a single JSON file
   getData() {

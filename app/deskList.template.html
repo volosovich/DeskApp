@@ -2,8 +2,10 @@
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Desks<span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li *ngFor="let item of Desks">
-                <a href="#">{{item.deskName}}</a>
+            <li *ngFor="let item of Desks; let ndx = index">
+                <!--<a [routerLink]="['About']">{{item.deskName}}</a>-->
+                <a (click)="sendClick(ndx)">{{item.deskName}}</a>
+                <!--<a href="#">{{item.deskName}}</a>-->
             </li>
             <li class="divider"></li>
             <li data-toggle="modal" data-target="#myModal7"><a href="#">Create a new Desk...</a></li>

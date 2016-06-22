@@ -20,20 +20,20 @@
 .flex-block {
     display: flex;
     flex-wrap: nowrap;
-    margin-bottom: 80px;
 }
 
 .block {
     background-color: lightgray;
     border-radius: 5px;
-    margin: 0px 10px 10px 10px;
+    margin: 0px 10px;
     height: 100%;
     width: 270px;
+    overflow: hidden;
 }
 
 .block .block-title {
     display: block;
-    height: 35px;
+    padding-right: 7px;
 }
 
 .block .block-title h4 {
@@ -63,4 +63,5 @@
 
 #main {
     margin-top: 60px;
+    margin-bottom: 90px;
 }

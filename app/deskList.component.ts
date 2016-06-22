@@ -1,6 +1,7 @@
-import {Component} from 'angular2/core';
+import {Component, Inject, EventEmitter, Output} from 'angular2/core';
 import {DemoService} from './demo.service';
-import 'rxjs/add/operator/map'
+import {SendPage} from './sendPage.service';
+import 'rxjs/add/operator/map';
 
 
 import {List} from './list.component';
@@ -12,18 +13,20 @@ import {FeaturesComponent} from './features.component'; //t
 @Component({
     selector: 'desk-list',
     templateUrl: 'app/deskList.template.html'
-    directives: [List, FeaturesComponent, AboutComponent, ROUTER_DIRECTIVES] //
+    directives: [List, FeaturesComponent, AboutComponent, ROUTER_DIRECTIVES], //
 })
 
 @RouteConfig([
     {path: '/', component: List, name: 'List', useAsDefault: true},
     {path: '/features', component: FeaturesComponent, name: 'Features'},
-    {path: '/about', component: AboutComponent, name: 'About'}
+    {path: '/about', component: AboutComponent, name: 'About'},
+    {path: '/list/:id', component: List, name: 'List'}
 ])
 
 export class DeskList {
   public Desks;
-  constructor(private _demoService: DemoService) { }
+  
+  constructor(private _demoService: DemoService) {}
 
   ngOnInit() {
     this.getData();
@@ -40,4 +43,10 @@ export class DeskList {
     );
     //debugger;
   }
+
+  sendClick(el){
+      console.log('CONSOLE IH DESKLIST.COMPONENT: ', el);
+      this._demoService.selectDesk(el);
+  }
+
 }

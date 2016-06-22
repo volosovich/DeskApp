@@ -10,7 +10,7 @@ import {FeaturesComponent} from './features.component';
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.template.html',
-    directives: [List, CreateDesk, DeskList,FeaturesComponent, AboutComponent, ROUTER_DIRECTIVES]
+    directives: [List, CreateDesk, DeskList, FeaturesComponent, AboutComponent, ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
@@ -19,4 +19,6 @@ import {FeaturesComponent} from './features.component';
     {path: '/about', component: AboutComponent, name: 'About'}
 ])
 
-export class AppComponent { }
+export class AppComponent {
+
+}
