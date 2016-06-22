@@ -1,6 +1,6 @@
 import {Component, Inject, EventEmitter, Output} from 'angular2/core';
 import {DemoService} from './demo.service';
-import {SendPage} from './sendPage.service';
+// import {SendPage} from './sendPage.service';
 import 'rxjs/add/operator/map';
 
 

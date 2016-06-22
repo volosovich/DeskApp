@@ -11,5 +11,7 @@ export class DemoService {
   getData() {
     return this.http.get('./testData/data.json').map((res:Response) => res.json());
   }
-
+  selectDesk(desk){
+    console.log('CONSOLE IH DEMO.SERVICE: ', desk);
+  }
 }
