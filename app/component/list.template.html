@@ -1,0 +1,21 @@
+<div class="flex-block" *ngIf="_demoService.desks" >
+    <div class="block" *ngFor="let list of _demoService.desks[0]['deskData']">
+        <div class="block-title">
+            <h4>{{list.nameList}}</h4>
+        </div>
+        <div *ngFor="let item of list.listCard">
+            <div class="card">
+                <div class="card-block">
+                    <p class="card-text">{{item.textCard}}</p>
+                </div>
+                <!--Change after start working with local storadge http://stackoverflow.com/questions/36681078/angular-2-date-deserialization-->
+                <!--<div class="card-footer">-->
+                <!--    {{item.dateCard | date:'shortDate'}}-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="text-center">
+            <a (click)="addCard('dsa')">Add new card...</a>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,19 @@
+//Angular Module
 import {bootstrap}    from 'angular2/platform/browser';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {AppComponent} from './app.component';
-import {DemoService} from './demo.service';
-import {SendPage} from './sendPage.service';
 import {ROUTER_PROVIDERS} from 'angular2/router';
+import {provide} from 'angular2/core';
+import {LocationStrategy, HashLocationStrategy} from 'angular2/platform/common';
+
+//Custom Module
+import {AppComponent} from './component/app.component';
+
+//Custom Service
+import {DemoService} from './service/demo.service';
 
 bootstrap(AppComponent, [
+  DemoService,
   HTTP_PROVIDERS,
   ROUTER_PROVIDERS,
-  DemoService
+  provide(LocationStrategy, {useClass : HashLocationStrategy})
 ]);
