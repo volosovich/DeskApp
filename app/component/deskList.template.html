@@ -2,10 +2,8 @@
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Desks<span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li *ngFor="let item of _demoService.desks; let ndx = index">
-                <!--<a [routerLink]="['About']">{{item.deskName}}</a>-->
-                <a (click)="selectDesk(item)">{{item.deskName}}</a>
-                <!--<a href="#">{{item.deskName}}</a>-->
+            <li class="desklist" *ngFor="let item of _demoService.desks2; let ndx = index">
+                <a (click)="selectDesk(item, ndx)">{{item.deskName}}</a><a class="glyphicon glyphicon-remove" (click)="removeDesk(ndx)"></a>
             </li>
             <li class="divider"></li>
             <li data-toggle="modal" data-target="#myModal7"><a>Create a new Desk...</a></li>

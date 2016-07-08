@@ -40,6 +40,32 @@
     line-height: 35px;
     padding-left: 15px;
 }
+.block .block-title a {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    top: -50px;
+    transition: .2s;
+    opacity: .1;
+}
+.block .block-title a:hover {
+    color: #D9534F;
+    opacity: 1;
+}
+
+.card-block a {
+    color: #000;
+    text-decoration: none;
+    top: -12px;
+    right: -6px;
+    transition: .2s;
+    opacity: .1;
+}
+
+.card-block a:hover {
+    color: #D9534F;
+    opacity: 1;
+}
 
 .block .card {
     width: 250px;
@@ -64,4 +90,18 @@
 #main {
     margin-top: 60px;
     margin-bottom: 90px;
+}
+
+.card textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    ;
+}
+
+.open > ul > li.desklist {
+    display: inline-flex;
 }

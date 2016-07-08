@@ -1,17 +1,28 @@
 <div class="flex-block" *ngIf="desk" >
-    <div class="block" *ngFor="let list of desk['deskData']">
+    <div class="block" *ngFor="let list of desk['deskData']; let ndx = index">
         <div class="block-title">
             <h4>{{list.nameList}}</h4>
+            <a class="glyphicon glyphicon-remove pull-right" (click)="removeList(ndx)"></a>
         </div>
-        <div *ngFor="let item of list.listCard">
+        <div *ngFor="let item of list.listCard; let ndxItem = index">
             <div class="card">
                 <div class="card-block">
                     <p class="card-text">{{item.textCard}}</p>
+                    <a class="glyphicon glyphicon-remove pull-right" (click)="removeCard(ndxItem, ndx)"></a>
                 </div>
             </div>
         </div>
-        <div class="text-center">
-                <a (click)="addCard('qwwq')">Add new card...</a>
+        <div class="card">
+            <form [ngFormModel]="form">
+                <textarea class="form-control" rows="2" placeholder="Add new Card" ngControl="newCard" #inputValueCard></textarea>
+                <button type="submit" class="btn btn-success btn-xs btn-circle pull-right" *ngIf="form.controls.newCard.dirty" (click)="addCard(form.controls.newCard.value, $event.srcElement.attributes.id.value); inputValueCard.value = ''" id="{{ ndx }}">Add</button>
+            </form>
         </div>
+    </div>
+    <div class="card">
+        <form [ngFormModel]="form">
+            <textarea class="form-control" rows="2" placeholder="Add new list" ngControl="newList" #inputValueList></textarea>
+            <button type="submit" class="btn btn-success btn-xs btn-circle pull-right" *ngIf="form.controls.newList.dirty" (click)="addList(form.controls.newList.value); inputValueList.value = ''">Add</button>
+        </form>
     </div>
 </div>

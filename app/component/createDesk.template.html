@@ -8,14 +8,14 @@
                     <h4 class="modal-title" id="myModalLabel">Create new Desk</h4>
                 </div>
                 <div class="modal-body">
-                    <input class="form-control" type="text" placeholder="Name of Desk..." maxlength="50" ngControl="nameDesk" required>
+                    <input class="form-control" type="text" placeholder="Name of Desk..." maxlength="50" ngControl="nameDesk" required #inputValueDesk>
                     <div class="alert alert-danger" role="alert" *ngIf="form.controls.nameDesk.value.length <= 3">Need min 4 chapters</div>
                     <div class="alert alert-danger" role="alert" *ngIf="form.controls.nameDesk.value.length == 0">Name is required</div>
                     <div class="alert alert-danger" role="alert" *ngIf="form.controls.nameDesk.errors.foundSameNameOfDesk">You have this desk...</div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Create</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" [ngClass]="{ 'disabled': form.controls.nameDesk.value.length <= 3 || form.controls.nameDesk.errors.foundSameNameOfDesk }" (click)="createDesk(); inputValueDesk.value = ''">Create</button>
                 </div>
             </div>
         </div>

@@ -9,6 +9,7 @@ import {DeskList} from './deskList.component';
 import {AboutComponent} from './about.component';
 import {FeaturesComponent} from './features.component';
 import {DeskDetails} from './deskDetails.component';
+import {LocalStorage} from 'angular2-local-storage/local_storage';
 
 //Custom Service
 import {DemoService} from '../service/demo.service';
@@ -29,10 +30,17 @@ import {DemoService} from '../service/demo.service';
 
 export class AppComponent {
     
-    constructor(public _demoService: DemoService) {}
+    constructor(
+        public _demoService: DemoService,
+        private ls:LocalStorage) {
+            if(Object.getOwnPropertyNames(this.ls.getObject('main')).length === 0){
+                this.ls.setObject('settings', []);
+            }
+        }
     
     ngOnInit() {
-        this._demoService.getData2();
+        // this._demoService.getData2();
+        this._demoService.getData3();
     }
 
 }

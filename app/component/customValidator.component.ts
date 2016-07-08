@@ -3,12 +3,15 @@
 //Angular Module
 import {Control} from 'angular2/common';
 
+
 //Custom service
 import {DemoService} from '../service/demo.service';
 
 export class CustomValidator {
     
-    constructor(private _demoService: DemoService) {}
+    constructor(
+        private _demoService: DemoService) {}
+
     static checkDesks(control: Control) {
         var arr = ['first','second', 'third']; //need load array from another component
         for(var i= 0; i < arr.length; i++){
